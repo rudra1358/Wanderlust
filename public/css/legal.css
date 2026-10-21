@@ -1,0 +1,116 @@
+/* AI-ADDED: Shared styling for the Privacy Policy and Terms pages. */
+.legal-page {
+  max-width: 960px;
+  margin: 3rem auto 5rem;
+  color: #292929;
+}
+
+.legal-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 4.5rem);
+  border-radius: 1.5rem;
+  color: #fff;
+  background: linear-gradient(135deg, #fe424d, #b92958);
+}
+
+.legal-hero::after {
+  position: absolute;
+  right: -3rem;
+  bottom: -8rem;
+  width: 18rem;
+  height: 18rem;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 50%;
+  content: "";
+}
+
+.legal-eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.legal-hero h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 700;
+}
+
+.legal-hero p {
+  max-width: 42rem;
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+.legal-updated {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 2rem;
+  font-size: 0.85rem;
+}
+
+.legal-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.legal-section {
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgb(34 34 34 / 4%);
+}
+
+.legal-section h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.legal-section p,
+.legal-section li {
+  color: #626262;
+  line-height: 1.7;
+}
+
+.legal-section p:last-child,
+.legal-section ul:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section ul {
+  padding-left: 1.2rem;
+}
+
+.legal-note {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #fe424d;
+  border-radius: 0.5rem;
+  background: #fff5f5;
+  color: #555;
+  line-height: 1.7;
+}
+
+.legal-note a {
+  color: #c52f3b;
+}
+
+@media (max-width: 640px) {
+  .legal-page {
+    margin: 1.5rem auto 3rem;
+  }
+
+  .legal-content {
+    grid-template-columns: 1fr;
+  }
+}
