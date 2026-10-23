@@ -1,5 +1,4 @@
 <% layout('/layouts/boilerplate') -%>
-<body>
        <style>
           #filters{
             display:flex;
@@ -32,6 +31,7 @@
             align-items: center;
           }
 
+          /* AI-ADDED: Keep filters and the tax control within narrow screens. */
           @media (max-width: 600px){
             #filters{
               display:grid;
@@ -46,6 +46,9 @@
             .tax-toggle{
               grid-column: 1 / -1;
               justify-self: center;
+              max-width: 100%;
+              height: auto;
+              min-height: 3.25rem;
             }
           }
        </style>
@@ -91,11 +94,12 @@
           </div>
       </div>
     </div>
-    <div class="row row-cols-lg-3 row-cols-md-2 mt-3 row-cols-sm-1">
+    <!-- AI-ADDED: Use responsive grid columns and fluid listing cards for mobile. -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mt-3">
     <%for(let listing of allListings){%>
-      <a href="/listings/<%=listing._id%>" class="listing-link">
-    <div class="card col listing-card" >
-      <img src="<%= listing.image.url %>" class="card-img-top" alt="..." style="width: 20rem; height: 20rem;">
+      <a href="/listings/<%=listing._id%>" class="listing-link col">
+    <div class="card listing-card" >
+      <img src="<%= listing.image.url %>" class="card-img-top" alt="...">
       <div class="card-img-overlay"></div>
       <div class="card-body">
         <p class="card-text">
@@ -109,8 +113,6 @@
     </a>
     <%}%>
     </div>
-</body>
-
 <script>
   let taxSwitch = document.getElementById('reverseCheck1');
   taxSwitch.addEventListener('click',()=>{

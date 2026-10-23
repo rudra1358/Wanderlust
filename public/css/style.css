@@ -9,10 +9,12 @@ body{
     flex:1;
 }
 
-/*Navbar*/
+/* AI-ADDED: Let the navbar grow to fit the expanded mobile menu. */
 .navbar{
-    height:5rem;
+    min-height:5rem;
     background-color:white;
+    position:relative;
+    z-index:1030;
 }
 
 .fa-compass{
@@ -67,10 +69,20 @@ body{
     margin-bottom: 2rem;
 }
 
+/* AI-ADDED: Keep listing cards fluid inside the responsive grid. */
+.listing-link{
+    min-width:0;
+}
+
 .card-img-top{
     border-radius:1rem !important;
     width:100% !important;
     object-fit:cover !important;
+}
+
+.listing-card:not(.show-card) .card-img-top{
+    aspect-ratio: 1 / 1;
+    height:auto !important;
 }
 
 .card-body{
@@ -115,8 +127,10 @@ body{
     height:30vh;
 }
 
+/* AI-ADDED: Keep listing action buttons spaced without fixed grid offsets. */
 .btns{
     display:flex;
+    gap:0.75rem;
 }
 
 .show-card{
@@ -128,5 +142,48 @@ body{
 /* map */
 #map{
     height:400px;
-    width:80vh;;
+    width:100%;
+    max-width:100%;
+}
+
+/* AI-ADDED: Prevent the expanded mobile menu and listing details from overflowing. */
+@media (max-width: 767.98px){
+    .navbar{
+        height:auto;
+    }
+
+    .navbar-collapse{
+        background-color:#fff;
+        padding:0.75rem 1rem 1rem;
+        border-top:1px solid #dee2e6;
+    }
+
+    .navbar-collapse .navbar-nav{
+        width:100%;
+    }
+
+    .navbar-collapse form{
+        width:100%;
+    }
+
+    .navbar-collapse .search-input{
+        min-width:0;
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+
+    .show-card{
+        width:100%;
+    }
+
+    .show-img{
+        height:auto;
+        max-height:60vh;
+        aspect-ratio: 4 / 3;
+        object-fit:cover;
+    }
+
+    .card-text{
+        overflow-wrap:anywhere;
+    }
 }
